@@ -20,6 +20,7 @@ github.com/vcaesar/gops v0.10.1/go.mod h1:301l7s41oGSmfI7F9ojpRHeF9MzZZ6Mv5vC038
 github.com/vcaesar/tt v0.10.1 h1:0DEl+XkyXivEwb/7jIYhDQ1g7KtMYqD/ZqABcMwC3wo=
 github.com/vcaesar/tt v0.10.1/go.mod h1:GHPxQYhn+7OgKakRusH7KJ0M5MhywoeLb8Fcffs/Gtg=
 github.com/zj360202/robotgo_mouse v0.0.0-20201119140303-ec3b15ac0bd4 h1:eZLfIOhLecN9CGb2Frzn2ibOAv64cBbxrYR6+1FjSkc=
+github.com/zj360202/robotgo_mouse v0.0.0-20201119143622-8f00826db857 h1:EgtUmRb4Q+nByXbakXKpY5DFNc9VJqEeRu4J2tfvNZc=
 golang.org/x/sys v0.0.0-20201101102859-da207088b7d1 h1:a/mKvvZr9Jcc8oKfcmgzyp7OwF73JPWsQLvH1z2Kxck=
 golang.org/x/sys v0.0.0-20201101102859-da207088b7d1/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=

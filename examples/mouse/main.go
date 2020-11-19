@@ -10,86 +10,86 @@
 
 package mouse
 
-import (
-	"fmt"
-
-	"github.com/zj360202/robotgo_mouse"
-	//"github.com/go-vgo/robotgo"
-	//"go-vgo/robotgo"
-)
-
-func move() {
-	robotgo.Move(100, 200)
-	robotgo.MoveRelative(10, -200)
-
-	// move the mouse to 100, 200
-	robotgo.MoveMouse(100, 200)
-
-	robotgo.Drag(10, 10)
-	robotgo.Drag(20, 20, "right")
-	//
-	robotgo.DragSmooth(10, 10)
-	robotgo.DragSmooth(100, 200, 1.0, 100.0)
-
-	// smooth move the mouse to 100, 200
-	robotgo.MoveSmooth(100, 200)
-	robotgo.MoveMouseSmooth(100, 200, 1.0, 100.0)
-	robotgo.MoveSmoothRelative(10, -100, 1.0, 30.0)
-
-	for i := 0; i < 1080; i += 1000 {
-		fmt.Println(i)
-		robotgo.MoveMouse(800, i)
-	}
-}
-
-func click() {
-
-	// click the left mouse button
-	robotgo.Click()
-
-	// click the right mouse button
-	robotgo.Click("right", false)
-
-	// double click the left mouse button
-	robotgo.MouseClick("left", true)
-}
-
-func get() {
-	// gets the mouse coordinates
-	x, y := robotgo.GetMousePos()
-	fmt.Println("pos:", x, y)
-	if x == 456 && y == 586 {
-		fmt.Println("mouse...", "586")
-	}
-
-	robotgo.MoveMouse(x, y)
-}
-
-func toggleAndScroll() {
-	// scrolls the mouse either up
-	robotgo.ScrollMouse(10, "up")
-	robotgo.Scroll(100, 200)
-
-	// toggles right mouse button
-	robotgo.MouseToggle("down", "right")
-
-	robotgo.MouseToggle("up")
-}
-
-func mouse() {
-	////////////////////////////////////////////////////////////////////////////////
-	// Control the mouse
-	////////////////////////////////////////////////////////////////////////////////
-
-	move()
-
-	click()
-
-	get()
-
-	toggleAndScroll()
-}
-
-func main() {
-	mouse()
-}
+//import (
+//	"fmt"
+//
+//	"github.com/zj360202/robotgo_mouse"
+//	//"github.com/go-vgo/robotgo"
+//	//"go-vgo/robotgo"
+//)
+//
+//func move() {
+//	robotgo.Move(100, 200)
+//	robotgo.MoveRelative(10, -200)
+//
+//	// move the mouse to 100, 200
+//	robotgo.MoveMouse(100, 200)
+//
+//	robotgo.Drag(10, 10)
+//	robotgo.Drag(20, 20, "right")
+//	//
+//	robotgo.DragSmooth(10, 10)
+//	robotgo.DragSmooth(100, 200, 1.0, 100.0)
+//
+//	// smooth move the mouse to 100, 200
+//	robotgo.MoveSmooth(100, 200)
+//	robotgo.MoveMouseSmooth(100, 200, 1.0, 100.0)
+//	robotgo.MoveSmoothRelative(10, -100, 1.0, 30.0)
+//
+//	for i := 0; i < 1080; i += 1000 {
+//		fmt.Println(i)
+//		robotgo.MoveMouse(800, i)
+//	}
+//}
+//
+//func click() {
+//
+//	// click the left mouse button
+//	robotgo.Click()
+//
+//	// click the right mouse button
+//	robotgo.Click("right", false)
+//
+//	// double click the left mouse button
+//	robotgo.MouseClick("left", true)
+//}
+//
+//func get() {
+//	// gets the mouse coordinates
+//	x, y := robotgo.GetMousePos()
+//	fmt.Println("pos:", x, y)
+//	if x == 456 && y == 586 {
+//		fmt.Println("mouse...", "586")
+//	}
+//
+//	robotgo.MoveMouse(x, y)
+//}
+//
+//func toggleAndScroll() {
+//	// scrolls the mouse either up
+//	robotgo.ScrollMouse(10, "up")
+//	robotgo.Scroll(100, 200)
+//
+//	// toggles right mouse button
+//	robotgo.MouseToggle("down", "right")
+//
+//	robotgo.MouseToggle("up")
+//}
+//
+//func mouse() {
+//	////////////////////////////////////////////////////////////////////////////////
+//	// Control the mouse
+//	////////////////////////////////////////////////////////////////////////////////
+//
+//	move()
+//
+//	click()
+//
+//	get()
+//
+//	toggleAndScroll()
+//}
+//
+//func main() {
+//	mouse()
+//}
