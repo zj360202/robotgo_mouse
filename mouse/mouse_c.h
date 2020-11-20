@@ -402,7 +402,7 @@ static double crude_hypot(double x, double y){
 	return ((M_SQRT2 - 1.0) * small) + big;
 }
 
-bool smoothlyMoveMouse(MMPointInt32 endPoint, double lowSpeed, double highSpeed){
+bool smoothlyMoveMouse(MMPointInt32 endPoint, int w, int h, double lowSpeed, double highSpeed){
 	MMPointInt32 pos = getMousePos();
 	//MMSizeInt32 screenSize = getMainDisplaySize();
 	double velo_x = 0.0, velo_y = 0.0;
@@ -431,6 +431,9 @@ bool smoothlyMoveMouse(MMPointInt32 endPoint, double lowSpeed, double highSpeed)
 //		if (pos.x >= screenSize.w || pos.y >= screenSize.h) {
 //			return false;
 //		}
+        if (pos.x >= w || pos.y >= h) {
+            return false;
+        }
 
 		moveMouse(pos);
 

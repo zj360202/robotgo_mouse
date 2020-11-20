@@ -53,6 +53,13 @@ const (
 	Version = "v0.91.0.1089, MT. Rainier!"
 )
 
+var screen_w, screen_h int
+
+func InitScreenSize(w, h int) {
+	screen_w = w
+	screen_h = h
+}
+
 // GetVersion get the robotgo version
 func GetVersion() string {
 	return Version
@@ -139,10 +146,12 @@ func MoveMouseSmooth(x, y int, args ...interface{}) bool {
 // MoveSmooth move the mouse smooth,
 // moves mouse to x, y human like, with the mouse button up.
 //
-// robotgo.MoveSmooth(x, y int, low, high float64, mouseDelay int)
+// robotgo.MoveSmooth(x, y, w, h int, low, high float64, mouseDelay int)
 func MoveSmooth(x, y int, args ...interface{}) bool {
 	cx := C.int32_t(x)
 	cy := C.int32_t(y)
+	cw := C.int32_t(screen_w)
+	ch := C.int32_t(screen_h)
 
 	var (
 		mouseDelay = 10
@@ -162,7 +171,7 @@ func MoveSmooth(x, y int, args ...interface{}) bool {
 		high = 3.0
 	}
 
-	cbool := C.move_mouse_smooth(cx, cy, low, high, C.int(mouseDelay))
+	cbool := C.move_mouse_smooth(cx, cy, cw, ch, low, high, C.int(mouseDelay))
 
 	return bool(cbool)
 }
@@ -182,7 +191,7 @@ func MoveRelative(x, y int) {
 }
 
 // MoveSmoothRelative move mose smooth relative
-func MoveSmoothRelative(x, y int, args ...interface{}) {
+func MoveSmoothRelative(x, y, w, h int, args ...interface{}) {
 	mx, my := MoveArgs(x, y)
 	MoveSmooth(mx, my, args...)
 }
@@ -233,7 +242,7 @@ func MoveClick(x, y int, args ...interface{}) {
 }
 
 // MovesClick move smooth and click the mouse
-func MovesClick(x, y int, args ...interface{}) {
+func MovesClick(x, y, w, h int, args ...interface{}) {
 	MoveSmooth(x, y)
 	MouseClick(args...)
 }
