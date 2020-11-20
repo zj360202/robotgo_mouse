@@ -12,21 +12,21 @@
 
 package robotgo_mouse
 
-import (
-	"fmt"
-	"testing"
-)
-
-func TestMoveMouse(t *testing.T) {
-	MoveMouse(20, 20)
-	MilliSleep(10)
-	x, y := GetMousePos()
-
-	fmt.Println(x, y)
-
-	//tt.Equal(t, 20, x)
-	//tt.Equal(t, 20, y)
-}
+//import (
+//	"fmt"
+//	"testing"
+//)
+//
+//func TestMoveMouse(t *testing.T) {
+//	MoveMouse(20, 20)
+//	MilliSleep(10)
+//	x, y := GetMousePos()
+//
+//	fmt.Println(x, y)
+//
+//	//tt.Equal(t, 20, x)
+//	//tt.Equal(t, 20, y)
+//}
 
 //
 //func TestMoveMouseSmooth(t *testing.T) {

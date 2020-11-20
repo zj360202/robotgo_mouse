@@ -10,9 +10,9 @@
 
 package robotgo_mouse
 
-import ps "github.com/vcaesar/gops"
-
-// Kill kill the process by PID
-func Kill(pid int32) error {
-	return ps.Kill(pid)
-}
+//import ps "github.com/vcaesar/gops"
+//
+//// Kill kill the process by PID
+//func Kill(pid int32) error {
+//	return ps.Kill(pid)
+//}
