@@ -39,7 +39,7 @@ package robotgo_mouse
 	#cgo windows,amd64 LDFLAGS: -L${SRCDIR}/cdeps/win64 -lz
 	#cgo windows,386 LDFLAGS: -L${SRCDIR}/cdeps/win32 -lz
 // #include <AppKit/NSEvent.h>
-#include "../mouse/goMouse.h"
+#include "mouse/goMouse.h"
 */
 import "C"
 
