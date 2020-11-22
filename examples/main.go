@@ -15,7 +15,9 @@ func main() {
 	////////////////////////////////////////////////////////////
 
 	// 开始使用其他接口
-	robotgo_mouse.MoveMouse(200, 200)
-	x, y := robotgo_mouse.GetMousePos()
-	fmt.Println(x, y)
+	//robotgo_mouse.MoveMouse(200, 200)
+	//x, y := robotgo_mouse.GetMousePos()
+	//fmt.Println(x, y)
+
+	robotgo_mouse.ScrollMouse(1, "up")
 }
