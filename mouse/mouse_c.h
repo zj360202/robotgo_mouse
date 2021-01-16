@@ -15,7 +15,7 @@
 	#include <X11/Xlib.h>
 	#include <X11/extensions/XTest.h>
 	#include <stdlib.h>
-	// #include "../base/xdisplay_c.h"
+	#include "../base/xdisplay_c.h"
 #endif
 
 #if !defined(M_SQRT2)
