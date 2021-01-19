@@ -2,6 +2,27 @@
 #include <stdio.h> /* For fputs() */
 #include <stdlib.h> /* For atexit() */
 
+#if defined(USE_X11)
+char * strdup(char* srcStr)
+{
+     int len=0;
+     char *start=srcStr;
+      if(srcStr!=NULL)
+     {
+     while(*srcStr++!='\0')
+             len++;
+
+         char *address=(char*)malloc(len+1);
+         assert(address!=NULL);
+
+         while((*address++=*start++)!='\0')
+             NULL;
+         return address-(len+1);
+     }
+     return NULL;
+}
+#endif
+
 static Display *mainDisplay = NULL;
 static int registered = 0;
 static char *displayName = ":0.0";
@@ -53,32 +74,5 @@ char *getXDisplay(void)
 {
 	return displayName;
 }
-int strcmp(const char* s,const char* t)
-{
-    assert(s!=NULL && t!=NULL);
-    while(*s && *t && *s==*t)
-    {
-     ++s;
-     ++t;
-    }
-    return (*s-*t);
-}
 
-char * strdup(char* srcStr)
-{
-     int len=0;
-     char *start=srcStr;
-      if(srcStr!=NULL)
-     {
-     while(*srcStr++!='\0')
-             len++;
 
-         char *address=(char*)malloc(len+1);
-         assert(address!=NULL);
-
-         while((*address++=*start++)!='\0')
-             NULL;
-         return address-(len+1);
-     }
-     return NULL;
-}

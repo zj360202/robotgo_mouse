@@ -21,7 +21,9 @@ extern "C"
 
 char *getXDisplay(void);
 void setXDisplay(char *name);
-
+#if defined(USE_X11)
+char * strdup(char* srcStr)
+#endif
 #ifdef __cplusplus
 }
 #endif
