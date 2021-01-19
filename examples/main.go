@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"os/exec"
+
 	//"robotgo_mouse"
 	"github.com/zj360202/robotgo_mouse"
 )
@@ -11,13 +14,20 @@ func main() {
 	////////////////////////////////////////////////////////////
 	// 初始化新增接口，不能少，不然部分包含smooth的接口与MoveClick接口无法使用
 	//w, h通过其他项目获取  比如：github.com/kbinani/screenshot
-	robotgo_mouse.InitScreenSize(1920, 1080)
+	//robotgo_mouse.InitScreenSize(1920, 1080)
 	////////////////////////////////////////////////////////////
 
 	// 开始使用其他接口
 	//robotgo_mouse.MoveMouse(200, 200)
 	//x, y := robotgo_mouse.GetMousePos()
 	//fmt.Println(x, y)
+	robotgo_mouse.MoveMouse(200, 200)
 
-	robotgo_mouse.ScrollMouse(1, "up")
+	//robotgo_mouse.ScrollMouse(1, "up")
+
+	fmt.Println("do it over")
+	cmd := exec.Command("cmd", "/", "pause")
+	cmd.Stdin = os.Stdin
+	cmd.Stdout = os.Stdout
+	cmd.Run()
 }

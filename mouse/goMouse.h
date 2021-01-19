@@ -10,6 +10,7 @@
 
 #include "../base/types.h"
 #include "mouse_c.h"
+#include <string.h>
 
 // Global delays.
 int mouseDelay = 0;
