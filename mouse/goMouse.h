@@ -12,19 +12,6 @@
 #include "mouse_c.h"
 #include <string.h>
 
-#if defined(USE_X11)
-int strcmp(const char* s,const char* t)
-{
-    assert(s!=NULL && t!=NULL);
-    while(*s && *t && *s==*t)
-    {
-     ++s;
-     ++t;
-    }
-    return (*s-*t);
-}
-#endif
-
 // Global delays.
 int mouseDelay = 0;
 // int keyboardDelay = 10;

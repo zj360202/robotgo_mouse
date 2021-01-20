@@ -1,27 +1,7 @@
 #include "xdisplay.h"
 #include <stdio.h> /* For fputs() */
 #include <stdlib.h> /* For atexit() */
-
-#if defined(USE_X11)
-char * strdup(char* srcStr)
-{
-     int len=0;
-     char *start=srcStr;
-      if(srcStr!=NULL)
-     {
-     while(*srcStr++!='\0')
-             len++;
-
-         char *address=(char*)malloc(len+1);
-         assert(address!=NULL);
-
-         while((*address++=*start++)!='\0')
-             NULL;
-         return address-(len+1);
-     }
-     return NULL;
-}
-#endif
+#include <string.h>
 
 static Display *mainDisplay = NULL;
 static int registered = 0;
@@ -63,10 +43,17 @@ void XCloseMainDisplay(void)
 		mainDisplay = NULL;
 	}
 }
-
+char *strdupTemp(const char *s)
+{
+   size_t  len = strlen(s) +1;
+   void *new = malloc(len);
+   if (new == NULL)
+      return NULL;
+   return (char *)memcpy(new,s,len);
+}
 void setXDisplay(char *name)
 {
-	displayName = strdup(name);
+	displayName = strdupTemp(name);
 	hasDisplayNameChanged = 1;
 }
 
